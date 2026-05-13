@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Cassie Scott
+**Student ID:** 134075705
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,18 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5/13/26 03:20]: Initial Plan
 
-> Required. Write this before writing any code. Describe your plan: what you will
-> implement first, what parts you expect to be difficult, and how you plan to test.
+_In part two it creates the set of important nodes we must visit once, from starting node S to eventually ending node T. It defines dijkstra which computes the lowest cost path from a source node to all known node. Finally it computes a nested set of all important nodes shortest paths to all other nodes using dijkstras on each source node. 
 
-_Your entry here._
+This part will required understanding djikstra, should be fairly easy.
+
+In part 5 and 6. The best optimal path will set up a best cost and its path order of chambers visited. Then, explore will run over the important nodes and shortest paths
+between them to find the best cost permutations, visiting each important node once and ending on the exit node. It will prune a subtree in a running path if current cost is over the stored best path cost, since it cannot be a better path, and update when a new best cost permutations is found.
+
+Soving the recurrsion function for _explore function I expect will be the most difficult part. It will use a DFS, finding each permutation of paths, before backtracking. First, check base case, all important nodes explored. Update if path cost is less than stored best and backtrack. If not, if path cost is more than best stored stop exploring, prunning this subtree and backtrack. Else, it will find a next node to explore, add its cost, and explore this node, recurring. 
+
+The Pipeline then takes the directed graph, computes shortest distances between important nodes from part 2, then finds optimal path based on graph given from part 5 and 6, and finally returning the solution, best cost path to all chamber nodes from start node S to exit node T. If no solution is found return (float('inf') [])._
 
 ---
 
