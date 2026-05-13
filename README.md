@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Cassie
+**Student ID:** Scott
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,16 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  _A single shorest path run from S is not enough because a set of chambers, M, must be
+  visited before visiting final node T. A shortest path is not guarantee to visit every
+  required location._
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  _After all inter locations costs are known we must choose the next chamber to visit._
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  _The immediate next best chamber to visit may not be the overall best choice for
+  minimum fuel cost._
 
 ---
 
@@ -44,9 +47,9 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
+| Data structure name | Dictionary |
+| What the keys represent | Nodes in graph |
+| What the values represent | Shortest path from source node to  |
 | Lookup time complexity | |
 | Why O(1) lookup is possible | |
 
