@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Cassie Scott
+Student ID:   134075705
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,13 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return """A single shorest path run from S is not enough because a set of\n
+    chambers, M, must be visited before visiting final node T. A shortest\n
+    path is not guarantee to visit every required location.\n\n
+    After all inter locations costs are known we must choose the next chamber\n
+    to visit.\n\n
+    The immediate next best chamber to visit may not be the overall best\n
+    choice for minimum fuel cost"""
 
 
 # =============================================================================
