@@ -38,7 +38,7 @@ _In part two it creates the set of important nodes we must visit once, from star
 
 ---
 
-## Entry 2 – [5/13/26 07:16]: Part 1 and 2 implementation, part 2 minor bug, updaate to entry 1
+## Entry 2 – [5/13/26 07:16]: Part 1 and 2 implementation, part 2 minor bug, update to entry 1
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
@@ -51,9 +51,17 @@ _Implemented part 1 explaintion. Implemented Part 2 - select_sources run dijkstr
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5/14/26 01:10]: [Part 5 and 6 implementation, part 6 bugs]
 
-_Your entry here._
+_Implemented part 5 and 6 find optimal route and explore functions. Worked on both simutniously
+	since they rely on each other. After testing it first had a bug due to a change from best
+	holding a single integer to list. This was fixed and was able to run. A second major bug,
+	a test case was failing to compute and returned a infinity solution (no solution). After
+	looking over, I was still unsure, so I used a chat bot to identify why the test was returning
+	a failed solution. 1. the best was accidently made as a tuple, therfore immutable; 2. The
+	prune comparasion was inverted; 3. Input current node instead of next node into recurrsion.
+	These were then fixed, I also made some minor changes to how objects were created and updated
+	during the recurrsion base. The test passed after these fixes._
 
 ---
 
