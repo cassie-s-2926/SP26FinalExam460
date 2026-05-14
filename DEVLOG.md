@@ -61,11 +61,18 @@ _Implemented part 5 and 6 find optimal route and explore functions. Worked on bo
 	a failed solution. 1. the best was accidently made as a tuple, therfore immutable; 2. The
 	prune comparasion was inverted; 3. Input current node instead of next node into recurrsion.
 	These were then fixed, I also made some minor changes to how objects were created and updated
-	during the recurrsion base. The test passed after these fixes._
+	during the recurrsion base. The test passed after these fixes. P.S. Pushed after entry by mistake._
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5/13/26 02:58]: Upload torchbearer.py fix
+
+_Implementations from entry 3 was not updated into main torchbearer.py from torchebear_testing.py
+	and pushed to github. Updated main file and push to github. Corresponding update to last entry._
+
+---
+
+## Entry 5 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
