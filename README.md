@@ -34,33 +34,29 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
-| Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| _spawn_| The path will always visit the start node |
+| _relics_ | Nodes with relics must be visited |
+| _exist_node_ | The path will always end at the exit node |
 
 ### Part 2b: Distance Storage
 
 > Fill in the table. No prose required.
 
-| Property | Your answer |
-|---|---|
 | Data structure name | Dictionary |
 | What the keys represent | Nodes in graph |
 | What the values represent | Shortest path from source node to  |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | A dictionary looks up by key by hash table |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _Number of source nodes_
+- **Cost per run:** _yO(ElogV_
+- **Total complexity:** _O(E^2logV_
+- **Justification (one line):** _ijkstra runs once for each source node up to E,
+-   it runs for time O(ElogV) for V vertices and E nodes each time it runs._
 
 ---
 
