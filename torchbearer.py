@@ -25,15 +25,7 @@ import heapq
 # =============================================================================
 
 def explain_problem():
-    """
-    Returns
-    -------
-    str
-        Your Part 1 README answers, written as a string.
-        Must match what you wrote in README Part 1.
-
-    TODO
-    """
+    
     return """A single shorest path run from S is not enough because a set of\n
     chambers, M, must be visited before visiting final node T. A shortest\n
     path is not guarantee to visit every required location.\n\n
@@ -48,20 +40,6 @@ def explain_problem():
 # =============================================================================
 
 def select_sources(spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    spawn : node
-    relics : list[node]
-    exit_node : node
-
-    Returns
-    -------
-    list[node]
-        No duplicates. Order does not matter.
-
-    DONE
-    """
 
     sources = [spawn]
     for relic in relics:
@@ -72,21 +50,6 @@ def select_sources(spawn, relics, exit_node):
 
 
 def run_dijkstra(graph, source):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-        graph[u] = [(v, cost), ...]. All costs are nonnegative integers.
-    source : node
-
-    Returns
-    -------
-    dict[node, float]
-        Minimum cost from source to every node in graph.
-        Unreachable nodes map to float('inf').
-
-    DONE
-    """
 
     dist = {node: float('inf') for node in graph}
     dist[source] = 0
@@ -110,22 +73,7 @@ def run_dijkstra(graph, source):
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
 
-    Returns
-    -------
-    dict[node, dict[node, float]]
-        Nested structure supporting dist_table[u][v] lookups
-        for every source u your design requires.
-
-    DONE
-    """
     sources = select_sources(spawn, relics, exit_node)
     dist_table = {}
 
@@ -175,58 +123,61 @@ def explain_search():
 # =============================================================================
 
 def find_optimal_route(dist_table, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    dist_table : dict[node, dict[node, float]]
-        Output of precompute_distances.
-    spawn : node
-    relics : list[node]
-        Every node in this list must be visited at least once.
-    exit_node : node
-        The route must end here.
 
-    Returns
-    -------
-    tuple[float, list[node]]
-        (minimum_fuel_cost, ordered_relic_list)
-        Returns (float('inf'), []) if no valid route exists.
+    current_loc = spawn
+    relics_remaining = set(relics)
+    relics_visited_order = []
+    cost_so_far = dist_table[current_loc][current_loc]
+    best = [float('inf'), []]
 
-    TODO
-    """
-    pass
+    # explore all permutations
+    _explore(dist_table, current_loc, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
+
+    # return best path found
+    return best
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
              cost_so_far, exit_node, best):
-    """
-    Recursive helper for find_optimal_route.
 
-    Parameters
-    ----------
-    dist_table : dict[node, dict[node, float]]
-    current_loc : node
-    relics_remaining : collection
-        Your chosen data structure from README Part 5b.
-    relics_visited_order : list[node]
-    cost_so_far : float
-    exit_node : node
-    best : list
-        Mutable container for the best solution found so far.
+    # prune if current branch worse than current best
+    if cost_so_far >= best[0]:
+        return
 
-    Returns
-    -------
-    None
-        Updates best in place.
+    # base case: all relics explored
+    if not relics_remaining:
 
-    TODO
-    Implement: base case, pruning, recursive case, backtracking.
+        # end if impossible to reach exit
+        if dist_table[current_loc][exit_node] == float('inf'):
+            return
 
-    REQUIRED: Add a 1-2 sentence comment near your pruning condition
-    explaining why it is safe (cannot skip the optimal solution).
-    This comment is graded.
-    """
-    pass
+        total_cost = cost_so_far + dist_table[current_loc][exit_node]
+
+        # if new best cost found, update best
+        if total_cost < best[0]:
+            best[0] = total_cost
+            best[1] = relics_visited_order.copy()
+
+        return
+
+    # recur for next relic chosen
+    for relic in relics_remaining:
+
+        # end if impossible to reach relic
+        if dist_table[current_loc][relic] == float('inf'):
+            continue
+
+        # visit
+        relics_visited_order.append(relic)
+        new_relics_remaining = relics_remaining - {relic}
+        new_cost_so_far = cost_so_far + dist_table[current_loc][relic]
+
+        # recur to next node
+        _explore(dist_table, relic, new_relics_remaining, relics_visited_order,
+                 new_cost_so_far, exit_node, best)
+
+        # backtrack
+        relics_visited_order.pop()
 
 
 # =============================================================================
