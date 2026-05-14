@@ -72,7 +72,16 @@ _Implementations from entry 3 was not updated into main torchbearer.py from torc
 
 ---
 
-## Entry 5 – [Date]: Post-Implementation Reflection
+## Entry 5 – [5/13/26 04:13]: Pipeline implementations, run tests ran
+
+_Implementations of pipeline for full program implementations. tested using created data and provided
+	case test. All test but 5 passed. Errors printed, so bug fixes might be required. Errors include
+	empty strings, so those will be implemented last and if errors still persist, fix will be
+	required. Minor change in explore function._
+
+---
+
+## Entry 6 – [Date]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.

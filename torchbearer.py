@@ -25,7 +25,7 @@ import heapq
 # =============================================================================
 
 def explain_problem():
-    
+
     return """A single shorest path run from S is not enough because a set of\n
     chambers, M, must be visited before visiting final node T. A shortest\n
     path is not guarantee to visit every required location.\n\n
@@ -127,14 +127,14 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     current_loc = spawn
     relics_remaining = set(relics)
     relics_visited_order = []
-    cost_so_far = dist_table[current_loc][current_loc]
+    cost_so_far = 0
     best = [float('inf'), []]
 
     # explore all permutations
     _explore(dist_table, current_loc, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
 
     # return best path found
-    return best
+    return best[0], best[1]
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -185,23 +185,16 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
 # =============================================================================
 
 def solve(graph, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
 
-    Returns
-    -------
-    tuple[float, list[node]]
-        (minimum_fuel_cost, ordered_relic_list)
-        Returns (float('inf'), []) if no valid route exists.
+    # Part 2 precompute distance table for important locations
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
 
-    TODO
-    """
-    pass
+    # 5 and 6 find optimal route for input
+
+    final_cost, final_relic_route = find_optimal_route(dist_table, spawn, relics, exit_node)
+
+    return final_cost, final_relic_route
+
 
 
 # =============================================================================
