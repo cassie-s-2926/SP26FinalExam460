@@ -34,6 +34,8 @@
 
 ### Part 2a: Source Selection
 
+| Source Node Type | Why it is a source |
+|---|---|
 | _spawn_| The path will always visit the start node |
 | _relics_ | Nodes with relics must be visited |
 | _exist_node_ | The path will always end at the exit node |
@@ -42,6 +44,8 @@
 
 > Fill in the table. No prose required.
 
+| Property | Your answer |
+|---|---|
 | Data structure name | Dictionary |
 | What the keys represent | Nodes in graph |
 | What the values represent | Shortest path from source node to  |
