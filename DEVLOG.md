@@ -43,7 +43,7 @@ _In part two it creates the set of important nodes we must visit once, from star
 
 ---
 
-## Entry 2 – [5/13 7:10]: Part 1 and 2 implementation, part 2 minor bug, updaate to entry 1
+## Entry 2 – [5/13/26 07:16]: Part 1 and 2 implementation, part 2 minor bug, updaate to entry 1
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
