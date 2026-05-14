@@ -12,7 +12,7 @@
 
 ## Entry 1 – [5/13/26 03:20]: Initial Plan
 
-_ 	In part two it creates the set of important nodes we must visit once, from starting node 
+_In part two it creates the set of important nodes we must visit once, from starting node 
 	S to eventually ending node T. It defines dijkstra which computes the lowest cost path
 	from a source node to all known node. Finally it computes a nested set of all 
 	important nodes shortest paths to all other nodes using dijkstras on each source node. 
@@ -43,7 +43,7 @@ _ 	In part two it creates the set of important nodes we must visit once, from st
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_	Implemented part 1 explaintion. Implemented Part 2 - select_sources run dijkstra and
+_Implemented part 1 explaintion. Implemented Part 2 - select_sources run dijkstra and
 	precompute distances functions. Initally the best path set returned from dijkstra was not
 	returning in my tests. I checked the code finding that I was attempting to return the priority
 	queue, which is empty. I then fixed it to return the distance set
