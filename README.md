@@ -57,9 +57,9 @@
 > State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** _Number of source nodes_
-- **Cost per run:** _yO(ElogV_
+- **Cost per run:** _O(ElogV_
 - **Total complexity:** _O(E^2logV_
-- **Justification (one line):** _ijkstra runs once for each source node up to E,
+- **Justification (one line):** _Dijkstra runs once for each source node up to E,
 -   it runs for time O(ElogV) for V vertices and E nodes each time it runs._
 
 ---
