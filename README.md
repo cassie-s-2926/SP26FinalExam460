@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** Cassie
-**Student ID:** Scott
+**Student Name:** Cassie Scott
+**Student ID:** 134075705
 **Course:** CS 460 – Algorithms | Spring 2026
 
 ---
