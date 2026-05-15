@@ -96,9 +96,24 @@ def dijkstra_invariant_check():
         Your Part 3 README answers, written as a string.
         Must match what you wrote in README Part 3.
 
-    TODO
+    DONE
     """
-    return "TODO"
+    return ("""Finalized node have shortest path from some source node to\n
+            all other nodes in graph. Nodes not yet finalized have some\n
+            shortest path which is within finalized set\n\n
+            Initialization: The set S for some source node is empty,\n
+            except to itself which is 0, so all nodes in S, None, fail the\n
+            invariant. Maintenance: If current dist is not best, it is\n
+            ignored and no better distance is set, if not, if current dist\n
+            and some edge distance to the node is a better option, it is\n
+            the best option of the known set each step. Termination: The\n
+            invariant guarantees, each node explored gets a better option\n
+            for a node if available until all nodes are set, meaning all\n
+            nodes are set for shortest path.\n\n
+            The route needs the best cost for visiting every node in the\n
+            set, therefore the correct best path for any connection
+            between important nodes means a best route for visiting the\n
+            nodes in set.""")
 
 
 # =============================================================================
@@ -113,9 +128,14 @@ def explain_search():
         Your Part 4 README answers, written as a string.
         Must match what you wrote in README Part 4.
 
-    TODO
+    DONE
     """
-    return "TODO"
+    return """- The failure mode: Best path fails all required visits._
+            - Counter-example setup: start = A [A, B, C, D] exit = D relics = 
+                B, C.\n
+            - What greedy picks: [A, B, D].\n
+            - What optimal picks: [A, B, C, D].\n
+            - Why greedy loses: C with some relic."""
 
 
 # =============================================================================
