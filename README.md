@@ -75,8 +75,6 @@
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
-
 _The route needs the best cost for visiting every node in the set, therefore the correct best path for any connection between important nodes means a best route for visiting the nodes in set._
 
 ---
