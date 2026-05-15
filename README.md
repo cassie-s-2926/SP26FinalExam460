@@ -4,17 +4,9 @@
 **Student ID:** Scott
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
 ---
 
 ## Part 1: Problem Analysis
-
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
   _A single shorest path run from S is not enough because a set of chambers, M, must be
@@ -42,8 +34,6 @@
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
-
 | Property | Your answer |
 |---|---|
 | Data structure name | Dictionary |
@@ -53,8 +43,6 @@
 | Why O(1) lookup is possible | A dictionary looks up by key by hash table |
 
 ### Part 2c: Precomputation Complexity
-
-> State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** _Number of source nodes_
 - **Cost per run:** _O(ElogV)_
@@ -66,13 +54,7 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
-
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
   _Finalized node have shortest path from some source node to all other nodes in graph._
@@ -81,8 +63,6 @@
   _Nodes not yet finalized have some shortest path which is within finalized set._
 
 ### Part 3b: Why Each Phase Holds
-
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   _The set S for some source node is empty, except to itself which is 0, so all nodes in S, None, fail the invariant._
@@ -105,9 +85,6 @@ _The route needs the best cost for visiting every node in the set, therefore the
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
-
 - **The failure mode:** _Best path fails all required visits._
 - **Counter-example setup:** _start = A [A, B, C, D] exit = D relics = B, C._
 - **What greedy picks:** _[A, B, D]._
@@ -115,8 +92,6 @@ _The route needs the best cost for visiting every node in the set, therefore the
 - **Why greedy loses:** _C with some relic._
 
 ### What the Algorithm Must Explore
-
-> One bullet. Must use the word "order."
 
 - _The algorithm must explore each possible path in order of best distance._
 
@@ -126,9 +101,6 @@ _The route needs the best cost for visiting every node in the set, therefore the
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
 | Current location | Current_loc | node | Holds currnt location being explored |
@@ -136,8 +108,6 @@ _The route needs the best cost for visiting every node in the set, therefore the
 | Fuel cost so far | cost_so_far | int | current cost computed for path|
 
 ### Part 5b: Data Structure for Visited Relics
-
-> Fill in the table.
 
 | Property | Your answer |
 |---|---|
@@ -149,8 +119,6 @@ _The route needs the best cost for visiting every node in the set, therefore the
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
 - **Worst-case number of orders considered:** _Check every possible path is explored for some k number of nodes for total k^2._
 - **Why:** _If no prunes occur, every node and possible neighbor nodes up to all other nodes in graph is k^2._
 
@@ -160,15 +128,11 @@ _The route needs the best cost for visiting every node in the set, therefore the
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
 - **What is tracked:** _Cost so far in branch._
 - **When it is used:** _Comparing to saved best cost path._
 - **What it allows the algorithm to skip:** _If cost so far is already over, or equal to, any further paths in branch cant be less than current._
 
 ### Part 6b: Lower Bound Estimation
-
-> Three bullets.
 
 - **What information is available at the current state:** _The best path over all branches explored._
 - **What the lower bound accounts for:** _Lower bound accounts for branches leading to always worse overall solutions._
@@ -176,14 +140,10 @@ _The route needs the best cost for visiting every node in the set, therefore the
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
 - _Any path in branch pruned cant be a solution better than current best._
 
 ---
 
 ## References
-
-> Bullet list. If none beyond lecture notes, write that.
 
 - _ N/A _

@@ -4,17 +4,6 @@ The Torchbearer
 
 Student Name: Cassie Scott
 Student ID:   134075705
-
-INSTRUCTIONS
-------------
-- Implement every function marked TODO.
-- Do not change any function signature.
-- Do not remove or rename required functions.
-- You may add helper functions.
-- Variable names in your code must match what you define in README Part 5a.
-- The pruning safety comment inside _explore() is graded. Do not skip it.
-
-Submit this file as: torchbearer.py
 """
 
 import heapq
@@ -89,15 +78,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
 # =============================================================================
 
 def dijkstra_invariant_check():
-    """
-    Returns
-    -------
-    str
-        Your Part 3 README answers, written as a string.
-        Must match what you wrote in README Part 3.
 
-    DONE
-    """
     return ("""Finalized node have shortest path from some source node to\n
             all other nodes in graph. Nodes not yet finalized have some\n
             shortest path which is within finalized set\n\n
@@ -121,15 +102,7 @@ def dijkstra_invariant_check():
 # =============================================================================
 
 def explain_search():
-    """
-    Returns
-    -------
-    str
-        Your Part 4 README answers, written as a string.
-        Must match what you wrote in README Part 4.
 
-    DONE
-    """
     return """- The failure mode: Best path fails all required visits._
             - Counter-example setup: start = A [A, B, C, D] exit = D relics = 
                 B, C.\n
@@ -214,7 +187,6 @@ def solve(graph, spawn, relics, exit_node):
     final_cost, final_relic_route = find_optimal_route(dist_table, spawn, relics, exit_node)
 
     return final_cost, final_relic_route
-
 
 
 # =============================================================================

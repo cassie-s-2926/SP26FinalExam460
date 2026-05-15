@@ -3,11 +3,6 @@
 **Student Name:** Cassie Scott
 **Student ID:** 134075705
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
-
 ---
 
 ## Entry 1 – [5/13/26 03:20]: Initial Plan
@@ -39,9 +34,6 @@ _In part two it creates the set of important nodes we must visit once, from star
 ---
 
 ## Entry 2 – [5/13/26 07:16]: Part 1 and 2 implementation, part 2 minor bug, update to entry 1
-
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
 
 _Implemented part 1 explaintion. Implemented Part 2 - select_sources run dijkstra and
 	precompute distances functions. Initally the best path set returned from dijkstra was not
@@ -83,25 +75,23 @@ _Implementations of pipeline for full program implementations. tested using crea
 
 ## Entry 6 – [Date]: Post-Implementation Reflection
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
+_Final Implementations of Part 3 and 4 completed. All tests passed with no errors, fixes not required 
+	some naming conventions and tweaks in implementation I might have done differently, also more
+	more case test for edge cases, example end locations being relic locations, but I thought it
+	not nescessary to assume._
 
 ---
 
 ## Final Entry – [Date]: Time Estimate
 
-> Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
-
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | ~ 2 - 3 hours |
+| Part 2: Precomputation Design | ~ 2 hours |
+| Part 3: Algorithm Correctness | ~ 30 min hour |
+| Part 4: Search Design | ~ 2 hours |
+| Part 5: State and Search Space | ~ 30 min |
+| Part 6: Pruning | 30 min |
+| Part 7: Implementation | ~ 1 - 2 hours |
+| README and DEVLOG writing | ~ 1 - 2 hours |
+| **Total** | ~ 8.5 hours |
