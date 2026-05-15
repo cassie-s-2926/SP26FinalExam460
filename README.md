@@ -57,8 +57,8 @@
 > State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** _Number of source nodes_
-- **Cost per run:** _O(ElogV_
-- **Total complexity:** _O(E^2logV_
+- **Cost per run:** _O(ElogV)_
+- **Total complexity:** _O(E^2logV)_
 - **Justification (one line):** _Dijkstra runs once for each source node up to E,
 -   it runs for time O(ElogV) for V vertices and E nodes each time it runs._
 
@@ -75,29 +75,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  _Finalized node have shortest path from some source node to all other nodes in graph._
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  _Nodes not yet finalized have some shortest path which is within finalized set._
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  _The set S for some source node is empty, except to itself which is 0, so all nodes in S, None, fail the invariant._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  _if current dist is not best, it is ignored and no better distance is set, if not, if current dist and some edge distance to the node is a better option, it is the best option of the known set each step._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  _The invariant guarantees, each node explored gets a better option for a node if available until all nodes are set, meaning all nodes are set for shortest path._
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+_The route needs the best cost for visiting every node in the set, therefore the correct best path for any connection between important nodes means a best route for visiting the nodes in set._
 
 ---
 
@@ -108,17 +108,17 @@ _Your answer here._
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _Best path fails all required visits._
+- **Counter-example setup:** _start = A [A, B, C, D] exit = D relics = B, C._
+- **What greedy picks:** _[A, B, D]._
+- **What optimal picks:** _[A, B, C, D]._
+- **Why greedy loses:** _C with some relic._
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- _The algorithm must explore each possible path in order of best distance._
 
 ---
 
@@ -131,9 +131,9 @@ _Your answer here._
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | Current_loc | node | Holds currnt location being explored |
+| Relics already collected | relics_visited_order | list | ordered set of relics visited |
+| Fuel cost so far | cost_so_far | int | current cost computed for path|
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -141,18 +141,18 @@ _Your answer here._
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | list |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1)|
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | Mutable, includes pop function |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _Check every possible path is explored for some k number of nodes for total k^2._
+- **Why:** _If no prunes occur, every node and possible neighbor nodes up to all other nodes in graph is k^2._
 
 ---
 
@@ -162,23 +162,23 @@ _Your answer here._
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _Cost so far in branch._
+- **When it is used:** _Comparing to saved best cost path._
+- **What it allows the algorithm to skip:** _If cost so far is already over, or equal to, any further paths in branch cant be less than current._
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _The best path over all branches explored._
+- **What the lower bound accounts for:** _Lower bound accounts for branches leading to always worse overall solutions._
+- **Why it never overestimates:** _If current path is already at or more than the best, any choice will always result in a worst solution. Any branch with possible better solution is considered for all branches, leading to best overall._
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- _Any path in branch pruned cant be a solution better than current best._
 
 ---
 
@@ -186,4 +186,4 @@ _Your answer here._
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- _ N/A _
